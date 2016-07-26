@@ -2,7 +2,7 @@
 <br>
 
 ### 基本参数
-<table border=1 width="100%">
+<table width="100%">
 <tbody>
 	<tr>
     	<td width="35%" align="center"><h2>参数</h2></td>

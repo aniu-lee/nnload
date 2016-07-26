@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <title>demo</title>
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="list">
+        　　
+    </div>
+</div>
+<script src="../dist/js/jquery.min.js"></script>
+<script src="../dist/js/jquery-nnload.js"></script>
+<script>
+    var currentPage=1;
+    $('.content').nnload({
+        'autoLoad':false,
+        'loadData':function(me){
+            $.get('data/data.txt',function(data){
+                        setTimeout(function(){
+                            $('.list').append(data);
+                            me.resetLoad();
+                            currentPage++;
+                            if(currentPage==5){
+                                me.noData(false);
+                                me.resetLoad();
+                            }
+                        },1500);
+                    }
+            );
+        }});
+</script>
+</body>
+</html>
